@@ -6,7 +6,7 @@ using namespace std;
 string minify(string text){
     for (int i = 0; i < text.length(); i++)
     {
-        if (text[i] == ' ' || text[i] == '\t' || (text[i] == '\n'))
+        if (text[i] == ' ' || text[i] == '\t' || text[i] == '\n')
         {
             text[i] = '\b';
         }   
@@ -25,7 +25,7 @@ int main(){
     }
     
     while(getline(myfile, line)) {
-        line = space2underscore(line);
+        line = minify(line);
         std::cout << line << std::endl;
     }
 
